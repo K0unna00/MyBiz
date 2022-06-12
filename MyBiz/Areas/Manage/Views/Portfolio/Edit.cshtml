@@ -1,0 +1,38 @@
+﻿@model Portfolio;
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row mx-auto">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div class="col-6">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input class="form-control" aria-describedby="Name" asp-for="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="col-6">
+                <label asp-for="Desc" class="form-label">Desc</label>
+                <input class="form-control" aria-describedby="Desc" asp-for="Desc">
+                <span class="text-danger" asp-validation-for="Desc"></span>
+            </div>
+            <div class="col-6">
+                <label asp-for="CatagoryId" class="form-label">Catagory</label>
+                <select asp-for="CatagoryId" class="form-select">
+                    @foreach(Catagory catg in ViewBag.Catagories)
+                    {
+                        <option value="@catg.Id">@catg.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-6">
+                <label asp-for="PortfolioImage" class="form-label">PortfolioImage</label>
+                <input class="form-control" aria-describedby="Desc" asp-for="PortfolioImage">
+                <span class="text-danger" asp-validation-for="PortfolioImage"></span>
+            </div>
+            <button type="submit" class="btn  bg-gradient-primary mt-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+

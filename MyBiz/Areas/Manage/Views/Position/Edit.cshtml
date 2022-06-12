@@ -1,0 +1,17 @@
+﻿@model Position;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row mx-auto">
+        <form asp-action="Edit">
+            <div class="col-6">
+                <label asp-for="Name" class="form-label">Position Name</label>
+                <input class="form-control" asp-for="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <button type="submit" class="btn  bg-gradient-primary mt-3">Submit</button>
+        </form>
+    </div>
+</div>

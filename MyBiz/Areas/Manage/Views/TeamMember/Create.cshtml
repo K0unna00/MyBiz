@@ -1,0 +1,37 @@
+﻿@model TeamMember;
+<div class="container">
+    <div class="row mx-auto">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div class="col-6">
+                <label asp-for="Fullname" class="form-label">Fullname</label>
+                <input class="form-control" aria-describedby="Fullname" asp-for="Fullname">
+                <span class="text-danger" asp-validation-for="Fullname"></span>
+            </div>
+            <div class="col-6">
+                <label asp-for="Desc" class="form-label">Description</label>
+                <input class="form-control" aria-describedby="Fullname" asp-for="Desc">
+                <span class="text-danger" asp-validation-for="Desc"></span>
+            </div>
+            <div class="col-6">
+                <label asp-for="PositionId" class="form-label">Position</label>
+                <select class="form-select" asp-for=PositionId>
+                @foreach(var item in ViewBag.Position)
+                {
+                    <option value="@item.Id">
+                        @item.Name
+                    </option>
+                }
+                </select>
+                <span class="text-danger" asp-validation-for="PositionId"></span>
+            </div>
+            <div class="col-6">
+                <label asp-for="MemberImage" class="form-label">Image</label>
+                <input class="form-control"asp-for="MemberImage">
+                <span class="text-danger" asp-validation-for="MemberImage"></span>
+            </div>
+            <button type="submit" class="btn  bg-gradient-primary mt-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+

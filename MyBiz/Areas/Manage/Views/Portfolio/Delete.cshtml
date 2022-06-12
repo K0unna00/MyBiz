@@ -1,0 +1,15 @@
+﻿@model Portfolio;
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <h6 class="card-title">@Model.CatagoryId</h6>
+        <p class="card-text">@Model.Desc</p>
+        <form asp-action="delete" method="post">
+            <button type="submit" class="btn bg-gradient-primary">Delete</button>
+        </form>
+    </div>
+</div>
+

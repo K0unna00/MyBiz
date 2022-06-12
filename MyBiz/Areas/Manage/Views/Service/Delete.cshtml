@@ -1,0 +1,19 @@
+﻿@model Service;
+@{
+    Layout = "_Layout";
+}
+
+<div class="col-6 mx-auto mt-3">
+    <h2 class="mx-auto">Delete an Author</h2>
+    <form asp-action="Delete" method="post">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-title">@Model.Desc</p>
+            </div>
+        </div>
+        <button type="submit" class="btn bg-gradient-primary">Delete</button>
+    </form>
+</div>

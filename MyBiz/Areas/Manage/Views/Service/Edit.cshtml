@@ -1,0 +1,20 @@
+﻿@model Service;
+<div class="container">
+    <div class="row mx-auto">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div class="col-6">
+                <label asp-for="Name" class="form-label">Fullname</label>
+                <input class="form-control" aria-describedby="Name" asp-for="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="col-6">
+                <label asp-for="Desc" class="form-label">Description</label>
+                <input class="form-control" aria-describedby="Fullname" asp-for="Desc">
+                <span class="text-danger" asp-validation-for="Desc"></span>
+            </div>
+            <button type="submit" class="btn  bg-gradient-primary mt-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+

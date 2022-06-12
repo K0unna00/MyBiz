@@ -1,0 +1,33 @@
+﻿@model List<Position>; 
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+<a asp-action="create" class="btn bg-gradient-primary">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Id</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Position pos in Model)
+         {
+                count++;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@pos.Name</td>
+                    <td>@pos.Id</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@pos.Id" class="btn bg-gradient-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@pos.Id" class="btn bg-gradient-primary">Delete</a>
+                    </td>
+
+                </tr>
+         }
+        
+    </tbody>
+</table>

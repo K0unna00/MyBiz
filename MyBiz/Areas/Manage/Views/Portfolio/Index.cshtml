@@ -1,0 +1,39 @@
+﻿@model List<Portfolio>; 
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+<a asp-action="create" class="btn bg-gradient-primary">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Image</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Portfolio Port in Model)
+         {
+                count++;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@Port.Name</td>
+                    <td>@Port.Desc</td>
+                    <td>
+                        <img width="128" height="128" src="~/Uploads/Portfolio/@Port.Image">
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@Port.Id" class="btn bg-gradient-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@Port.Id" class="btn bg-gradient-primary">Delete</a>
+                    </td>
+
+                </tr>
+         }
+        
+    </tbody>
+</table>
+
+
